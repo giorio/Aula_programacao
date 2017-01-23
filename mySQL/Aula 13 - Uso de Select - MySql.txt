@@ -1,0 +1,68 @@
+Atividade 01
+
+	select profissao, count(*) from gafanhotos
+	group by profissao
+	order by profissao;
+
+	Ator	6
+	Auxiliar Administrat	13
+	Dentista	7
+	Empreendedor	7
+	Farmacêutico	2
+	Médico	3
+	Professor	7
+	Programador	16
+
+
+--x--
+
+
+Atividade 02
+
+	select sexo, count(*) from gafanhotos
+	where nascimento > '2005-01-01'
+	group by sexo;
+
+	M	8
+	F	2
+
+
+--x--
+
+
+Atividade 03
+
+	select nacionalidade, count(*) from gafanhotos
+	where nacionalidade not like 'Brasil'
+	group by nacionalidade
+	having count(nacionalidade) >= 3
+	order by nacionalidade desc;
+
+	Portugal	8
+	Moçambique	3
+	Irlanda	3
+	EUA	8
+	Canadá	4
+	Angola	4
+
+
+--x--
+
+
+Atividade 04
+
+	select altura, count(*) from gafanhotos
+	where peso > 100
+	group by altura
+	having altura > (select avg(altura) from gafanhotos)
+
+	1.76	2
+	1.87	1
+	1.97	1
+	1.99	1
+	2.19	1
+	2.22	1
+	2.35	1
+
+
+--x--

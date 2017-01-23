@@ -1,0 +1,308 @@
+Desenvolvimento Agil
+
+	Manifesto Agil foi desenvolvido por um grupo de pessoas que viam que o metodo tradicional de desenvolvimento tradiocional estava ultrapassado.
+
+	O manifesto fala de 4 pontos, são ele:
+
+		1) Individuos e interação entre eles, mais que processo e ferramentas - Prioriza a comunicação da equipe e a intereção dela;
+		2) Software em funcionameno, mais que documentação abrangente - entregar um software em vez de documentos;
+		3) Colaboração com o Cliente, mais que negociação de contratos;
+		4) Responder a mudanças, mais que seguir plano.
+
+	obs.: Ou seja mesmo havendo valor nos itens à direita, valoriza-se mais os itens da esquerda
+
+	Ágil <> Rápido
+	Ágil - Responder mais rapido a mudança, alterações;
+	Rápido - Velocidade.
+
+--x--
+
+
+1) Individuos e interação entre eles, mais que processo e ferramentas
+
+	Processo Proditivos - determina tudo o que vai fazer, lembra o estudo "Tempos e Movimentos" de Adam Smith.
+	Se preocupa em seguir o processo, e esquece de desenvolver o software.
+	Processos dificeis de seguir devem usar ferramentas de controle, e elas não faceis de usar e tiram o foco do projeto.
+	Processo não deve ser foco principal do desenvolvimento
+	Deve-se aproveitar o máximo do potencial de um colaborador.
+	Deve priorizar a comunicação entre as pessoas dentro da mesma equipe ou do mesmo projeto.
+	Ordem de Eficiencia da comunicacação, decrescente:
+
+		1) Face a Face no quadro branco;
+		2) Face a Face Conversa;
+		3) Video chat;
+		4) Ligação telefonica;
+		5) Gravação de video;
+		6) E-mail;
+		7) Gravação de audio;
+		8) Papel
+
+	Opção para Modelagem: 1; 2; 3; 4; 5; 6
+	Opção para Documentação: 5; 6; 7; 8
+
+	Quadro + Post It > muito usado no desenvolvimento agil.
+
+	Não concordo com uso apenas no uso de post it para poder usar como documentação de software
+
+
+2) Software em funcionameno, mais que documentação abrangente
+
+	É mais importante entregar um software do que entregar documentação abrangente.
+	Problema comum com documentação muito extensa, o projeto já andou 40% mas não tem entregavel, pois a parte inicial é apenas documentação, e muitos dela não servem para nada, exemplo: documento falando que não há necessidade de treinamento.
+	Fazer documento gaste esforço da equipe e não gera um entregavel para o cliente.
+	Em vez de usar o esforço de documentar tudo no inicio, porque não fazer apenas um documento funcional + prototipagem, onde o cliente ver um modelo do software.
+	Entrega um software pequeno, e com feedback do cliente vai melhorando o software. Não é cliente pediu eu altero o programa
+
+	TDD e refatoração deixam o código mais fácil de ser modificado.
+
+	**Pesquisar TDD e refatoração
+
+	Documento que devem ser gerado, são aqueles que agregam valor tais como "regra de negocio", "requisitos", "parte mais complicados", "diagramas de estados"
+
+
+3) Colaboração com o Cliente, mais que negociação de contratos
+
+	Não tratar clientes como inimigos.
+		- "Será que o cliente tem maturidade de definir tudo no começo do projeto?"
+		- "Não seria melhor trabalhar junto com o cliente na definição do escopo?"
+		- "Não seria melhor deixar o cliente ver uma parte do software para avaliar?"
+
+	Deve-se procurar uma colaboração e cooperação com cliente é essencial, pois é melhor ele ir fazer feedback pontuais, em vez de na hora da entrega ele recusa e fale que não era o que queria.
+	Com colabaração é possivel chegar em objetivos que seriam impossiveis sem a colaboração.
+
+	Obs. Alteração em demasia prejutica o projeto mesmo no inicio.
+
+
+4) Responder a mudanças, mais que seguir plano
+
+
+	No inicio do projeto classico, seguindo PMI, perde-se muito tempo elaborando planejamento e graficos de gantt, e qualquer mudança atrapalha o planejamento já que terá que corrigir todo o planejamento feito no inicio, sendo assim é visto como coisa ruim.
+	Quando o cliente gera feedback, geralmente resulta em mudança de escopo e com isso tem que alterar o planejamento. Com isso em vista manter o planejamento vira o foco do projeto não a entrega do software.
+	No desenvolvimento agil usam praticas para tornar as resposta rapida quando surgirem as mudanças.
+	É feito um detalhamento do planejamento que torne facil de ser alterado.
+		
+		1) Detalhado - Curto Prazo
+		2) Alto Nível - Médio Prazo
+		3) Visão - Lomgo Prazo
+
+	Usa-se mais o quadro branco com a tecnica Kambam que grafico de gantt.
+
+	TDD e refatoração deixam o código mais fácil de ser modificado.
+
+
+--x--
+
+
+Scrum&XP: A Forma Como Fazemos Software
+
+	Modelo Tradicional x Modelagem Ágil
+
+	Evia mudança em requisitos x Aceita mudança em requisitos
+	Análise antes da implementação x Usa feedback e colaboração do cliente
+	Entrega software apenas no fim x Entrega software frequentemente
+
+		Scrum - é um framework se adapta para gerenciar projetos
+		XP - Metodologia de desenvolvimento, ela chega no finalmente
+
+	Ciclo - Sprint
+		
+		1) Escrever as "user stories" com os clientes
+		2) Criar o software - usar o TDD
+		3) Feedback do usuário
+		4) Entrega o software
+		5) volta para 1
+
+
+--x--
+
+User Story: O que é?
+	
+	- Descreve uma funcionalidade que o PO gostaria de ver em seu produto;
+	- A perspectiva é do PO;
+	- É uma conversa entre PO e a equipe de desenvolvimento
+
+		Perguntas básica:
+						
+			1) Who - Determinar os papeis e usuário desse software.
+			2) What - Qual o objetivo?
+			3) Why - Por que ele precisa ver isso?
+
+				Who		> As a (Como um) <Tipo de usuário>
+				What	> I want/need <Objetivo>
+				Why		> So that <Benefício/razão> - opcional, não precisa vir no inicio.
+
+			Modelos de user story:
+						
+			1) Como um "gerente de comercial" eu quero "o relatório de vendas ordenado por volume de vendas" de modo "a conhecer meus melhores clientes".
+			2) Como Comprador online de livros, quero utilizar meu cartã de crédito no pagamento dos livros escolhidos, de modo a ter praticidade e segurança no pagamento.
+
+			No Scrum o cliente é chamado de Product Owner (PO), dono do produto, ele deve participar do processo do inicio ao fim.
+			Como pegar os requisitos com o PO? Há 3 formas:
+						
+			1) Funcionamlidade - Você descreve a funcionalidade delas.
+			2) Caso de Uso - descrição mais detelhada
+			3) User Story
+
+	-Propósitos
+		1) Ajudar a todos envolvidos a compreender;
+		2) quem é o usuário?;
+		3) quer o quê?;
+		4) Por quê?;
+
+--x--
+
+
+User Story: Cartão, Conversação e Confirmação
+	
+	Estrutura das user story
+
+	Cartão (frente de um cartão ou post it) - Conversão - Confirmação (teste de aceitação, pode ter n testes - verso do cartão)
+
+		1) cartão
+			a) Representa uma 'user Story';
+			b) Representa um requisito;
+			c) Pode-se usar um cartão índice ou um Post-it ou ferramenta digital (Trello, Kambam flow);
+			d) Texto suficiente para identificar o requisito, não precisa ser muito detalhada;
+
+		2) Conversação
+			a) Define 'user stories' no 'Sprint Zero'
+			b) PO define AT no 'Sprint Zero' /*Ats = 'Acceptance Tests' ou Teste de aceite*/
+			c) Ajuda a estimar esforço ou tamanho (size) das 'users Stories' -> Planning Poker
+			d) PO define o Valor de Negócio da 'User Story'	/*VAlor de Negócio = Business Value (BV)*/
+
+		3) Confirmação
+			a) Confirma que a 'User Story' foi codifica corretamente;
+			b) No 'Sprint Review' ou 'Demo', o PO "CONFIRMA" isso ou não: "a palavra final é dele!";
+			c) ATs são escritas na linguagem do domínio do negócio da aplicação;
+			d) Fruto da conversação entre PO e o time de desenvolvimento - teste funcional, caixa preta, o teste serve para verificar se o produto é o que foi solicitado.
+			f) ATs ajudam o PO e o time de desenvolvimento a confirmar que a 'User Story' foi codificada corretamente;
+
+
+	Acrescetamos aos 3W no primeiro cartão, o size e o BV para ajudar a fazer a priorização de demanda
+
+
+--x--
+
+
+User Story: Testes de Aceitação
+
+	As AT são desenvolvidas durantes os sprints, não necessariamente no sprint zero. O time de desenvolvimento 'sugeri' teste ao PO, cabe ele aceitar ou não este teste.
+
+		* Time de desenvolvedores
+			- Implementar a User Story
+			- Implementar os Ats
+
+		* Sprint Review/Demo
+			- Time omstra que a 'user story' implementada passa pelos ATs
+
+
+--x--
+
+
+User Story: Caracterização de Papéis de Usuário
+
+	User Roles: carecterização
+
+	O tipo ou papel do 'usuário' é uma pessoa?
+
+	User Role
+		- Especifica um 'conjunto de usuários' que irão 'interagir' com a aplicação com um 'interesse comum';
+	
+	Representa
+		- Usuários Humanos;
+		- Dispositivos de hardare externo;
+		- Outros aplicativos;
+
+	Visão da aplicação - Documento que descreve os requisitos o que o sistema vai fazer, e vai guiar todos os envolvidos.
+		Aqui coloca os requisitos funcionais e não funcioans, a parte do tipo de usuário.
+
+
+--x--
+
+
+User Story: Exemplo de Papéis de Usuário
+
+	Exemplo:
+		Aplicação: 
+			- Website para venda de e-book
+
+		User Roles:
+			* Humanos
+				- Visitante: Não faz login e navega no site!
+				- Cliente: Faz login e tem acesso livre a e-book!
+					> Padrão: Faz login e tem acesso a e-book grátis!
+					> Premium: Faz login e tem acesso pago a todos e-books!
+				- Admin: Mantém o site!
+			* Aplicativos
+				-Paypal: Permite usuário fazer doações e a clientes premium fazer o pagamento
+			* Dispositvos
+				- Não há
+
+
+--x--
+
+
+Visão da Aplicação: Por Quê?
+
+	Sprint Zero - geramente demora de 1 a 2 semanas
+		> Visão da Aplicação 
+		> Backlog da Aplicação - Conjunto de 'User Story';
+
+
+--x--
+
+
+Visão da Aplicação: O Que É?
+
+
+	Conjunto de informação que auxiliam a saber o que deve ser e como deve ser implementado, máximo de 2 ou 3 páginas, pois a documentação não pode se sobrepor ao software
+
+		- Serve de norte verdadeiro do projeto;
+		- Define  a direção e orienta a equipe, aqui não apenas os desenvolvedores, mas todos os envolvidos;
+			[Equipe]
+				>> PO;
+				>> Time de desenvolvedores;
+				>> Mkt;
+				>> Designer Produto;
+				>> Designer Interface;
+				>> Partes Interessadas;
+		- Descreve porque o projeto está sendo realizado;
+		- Descreve qual é o estado final desejado;
+		- Valor de Negócio - PO e Stakerholder;
+		- Necessidades dos clientes ou dos 'User Roles';
+			> Identificar os tipor de usuários ou 'User Roles';
+			> Identificar as necessidades dos tipos de usuários;
+		- Identificar os atributos do produto
+			> Requsiitos Funcionais
+				* Fazer uma chamada telefônica;
+				* Enviar um e-mail;
+			> Requisitos não-Funcionais;
+				* Perfomance;
+				* Robustez;
+				* Usabilidade;
+				* Disponibilidade;
+
+
+
+	Cuidados para fazer uma visão:
+		> Subespecificação;
+		> Superespecificação;
+
+	O que procurar:
+		> EDUF - Especificação Suficiente
+
+
+--x--
+
+
+Visão da Aplicação: Exemplo!
+
+
+	'Aplicação': Website para vendas de e-book
+	Nome Fanstasia: 'Livros a Jato'
+
+	Formato: Teste do elevador - versão resumida, rápida
+	
+		Para pessoas que compra na internet	que querem usufruir de preço mais baixo, a Livro a Jato, é uma loja virtual (website) que oferece acesso a e-books gratuitos e pagos de diferentes editoras brasileiras e estrangeiras. Diferentemente de lojas similares, nosso produto notifica o cliente quando grupos de 10 novos títulos são incoporados ao nosso acervo.
+
+		Nos idetificamos 4 tipos de usuários: visiantes comum, cliente padrão, cliente premium e aministrador do Website. O Admin vai manter o site, inserindo e removendo títulos de e-book, bem como definido se o e-book vai ser gratuito ou pago! O visitante poderá navegar no site sem fazer login, mas não terá acesso nem ao e-books gratuitos. O cliente padrão poderá também navegar livremente no site, mas, se quiser ler e-book gratuitos, terá que logar no site. Acesso tato a livros gratuitos quanto pagos, apenas a cliente premium logados, que para isso faz pagamento mensal ou anual. O pagamento é feito por intermédio do PayPal. Doações são aceitas pela mesma aplicação por todos os tipos de usuários, execot o Admin.

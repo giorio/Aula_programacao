@@ -1,0 +1,220 @@
+Coisas para PHP ou feita com PHP
+
+museum.php.net
+midiwiki
+zend framework (framework para php)
+
+renderae.com.br (produtora de efeitos graficos para youtube12)
+
+total variavel em php começa com $ e o nome dela é toda minuscula.
+
+Exemplo de atribuição:
+
+$idade = 3;
+$sal = 1825.54;
+$nome = "Leonardo";
+$casado = false; (true)
+
+Para o php não há declaração de variavel, mas pode ser forçado um tipo de atributo primitivo para as variveis usando os "typecast" descrito abaixo:
+
+	Inteiro - (int), (integer)
+	Real - (real), (float), (double)
+	caractere - (string)
+	lógico (boleano) - não há pq em php o tipo logico é considero um tipo inteiro, para true = 1; false = vazio
+
+
+Operadores Aritmétricos
+
+Adição > $r = $a + $b
+subtração > $r = $a - $b
+multiplicação > $r = $a * $b
+Divisão > $r = $a / $b
+Módulo (resto da divisão) > $r = $a % $b
+
+Funções aritmetica
+
+abs() - Retorna o valor absoluto da variavel
+pow() - potenciação
+sqrt() - Raiz quadrada
+round() - arredondamento
+ceil() - arrendonda para cima então 3.1 virá 4
+floor() - arrendonda para baixo então 3.9 virá 3
+intval() - pega a parte inteirta dq variavel
+number_format() - Formatação
+
+
+operadores de atribuição
+
+algoritmo
+
+a <- 1
+b <- 3
+c <- a + b
+c <- c + 5
+a <- a + 1
+
+php
+
+$a = 1;
+$b = 3;
+$c = $a + $b;
+$c = $c + 5; ou $c += 5;
+$a = $a + 1; ou $a ++;
+
+Adição > $a = $a + $b ou $a += $b
+Subtração > $a = $a - $b ou $a -= $b
+Multiplicação > $a = $a * $b ou $a *= $b
+Divisão > $a = $a / $b ou $a /= $b
+módulo > $a = $a % $b ou $a %= $b
+concatenação > $a = $a . $b ou $a .= $b
+
+operadores de incremento
+
+Pré-incremento > $a = $a + 1 ou ++$a
+Pós-incremento > $a = $a + 1 ou $a++
+Pré-decremento > $a = $a - 1 ou --$a
+Pós-decremento > $a = $a - 1 ou $a--
+
+Pré > incrementa antes de usar a variável
+Pós > incrementa depois de usar a variável
+
+como fazer comentário em php
+comentários inline
+// ou #
+
+Comentários multiline
+
+/* comentario */
+
+Como fazer referências entre variáveis
+
+$a = 3;
+$b = $a;
+$b += 5;
+echo $a; // 3
+echo $b; // 8
+
+$a = 3;
+$b = &$a; // você está ligando as $a e $b
+$b += 5;
+echo $a; // 8
+echo $b; // 8
+
+Variáveis de variáveis ou variáveis variantes
+
+Comparações
+
+operadores relacionais
+Maior - $a > $b
+Menor - $a < $b
+Maior ou igual - $a >= $b
+Menor ou igual - $a <= $b
+diferente - $a <> $b ou $a != $b
+igual - $a == $b
+idêntico - $a === $b -> igual e do mesmo tipo
+
+Operador Ternário
+
+expressão ? valor se verdadeiro : valor se falso
+
+operadores lógico
+
+e -> and ou &&
+ou -> or ou ||
+Xou ou Ou exclusivo - as situções não podem se repetir então na tabela verdade (p XOU q) o resultado ficaria -> xor
+
+p 		|Q 			|p XOU q
+v 		|v 			|f
+v 		|f 			|v
+f 		|v 			|v
+f 		|f 			|f
+
+não -> !
+
+estrutura condicional
+
+se
+
+if (condição)
+{se verdadeiro;}
+else
+{se falso;}
+
+Condições de múltiplos casos (escolha) - switch
+
+No visualg
+
+escolha (op)
+	caso 1
+		escreva("A")
+	caso 2
+		escreva("B")
+	outrocaso
+		escreva("Erro")
+	FimEscolha
+
+em php
+
+switch($op) {
+	case 1:
+		echo "A";
+		break;
+	case 2:
+		echo "B";
+		break;
+	default:
+		echo "Erro";
+}
+
+o comando break obrigatóriamente tem que está em caso, exceto no último.
+
+
+No visualg
+
+escolha (op)
+	caso 1, 2, 3
+		escreva("Tipo 1")
+	caso 4, 5
+		escreva("Tipo 12")
+	outrocaso
+		escreva("Tipo 3")
+	FimEscolha
+
+em php
+
+switch($op) {
+	case 1:
+	case 2:
+	case 3:
+		echo "Tipo 1";
+		break;
+	case 4:
+	case 5:
+		echo "Tipo 2";
+		break;
+	default:
+		echo "Tipo 3";
+}
+
+Repetição com teste logíco no início
+
+Visualg
+
+C <- 1
+enquanto (c <= 10) faca
+	escreva (c)
+	C <- c + 1
+FimEnquanto
+
+PHP
+
+$c = 1
+while ($c <= 10) {
+	echo $c;
+	$c++;
+}
+pode usar 2 comandos
+Break e continue
+Break - encerra o while naquele ponto
+Continui - volta para inicio do laço mesmo sem chegar no final
+não recometando.
