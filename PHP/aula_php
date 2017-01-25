@@ -22,6 +22,7 @@ Para o php não há declaração de variavel, mas pode ser forçado um tipo de a
 	caractere - (string)
 	lógico (boleano) - não há pq em php o tipo logico é considero um tipo inteiro, para true = 1; false = vazio
 
+comando echo e print são similares e servem para sáida de dados do código para tela.6
 
 Operadores Aritmétricos
 
@@ -218,3 +219,289 @@ Break e continue
 Break - encerra o while naquele ponto
 Continui - volta para inicio do laço mesmo sem chegar no final
 não recometando.
+
+Repetições com teste Lógicos no Final
+
+Visualg
+
+C <- 1
+Repita
+	Escreva(c)
+	c <- c + 1
+Ate (c > 10)
+
+em php não tem a estrutura repita más tem como fazer teste lógico no final, para isso precisa alterar a estrutura do algoritmo "Enquanto (while)"
+
+Visualg
+
+C <- 1
+faca
+	escreva (c)
+	C <- c + 1
+enquanto (c <= 10)
+
+PHP
+
+$c = 1
+do {
+	echo $c;
+	$c++
+} while ($c <= 10);
+
+Repetição com Variavel de Controle
+
+Visualg
+
+Para c <- 1 até 10 faca
+	Escreva(c)
+FimPara
+
+PHP
+
+for($c = 1; $c <= 10; $c++){
+	echo $c;
+}
+
+Rotinas
+
+1) Pocedimento
+
+	Visulag
+
+		Procedimento Soma (A, B: Inteiro)
+			var S: Inteiro
+			S <- A + B
+			Escreva(s)
+		FimProcedimento
+
+		Para chamar o procedimento
+
+		Soma(3,4)
+
+	PHP
+
+		function soma ($a, $b) {
+			$s = $a + $b;
+			echo $s;
+		}
+
+		Para chamar o procedimento
+
+		soma(3,4);
+
+2) Funções
+	
+	Visulag
+
+		Funcao Soma (A, B: Inteiro):Inteiro
+			var S: Inteiro
+			S <- A + B
+			Retorne(S)
+		FimFuncao
+
+		Para chamar o procedimento
+
+		Res <- Soma(3,4)
+
+	PHP
+
+		function soma ($a, $b) {
+			$s = $a + $b;
+			return $s;
+		}
+
+		Para chamar o procedimento
+
+		$res = soma(3,4);
+
+Rotinas com múltiplos parâmetros em PHP ou Parâmetros Dinâmicos
+
+	$res = soma (3,4,8,1,2)
+
+	function soma () {
+		$p = func_get_args();
+		$tot = func_num_args();
+		$s = 0
+		for ($i = 0; $i < $tot; $i++){
+			$s += $p[i]
+		}
+		return $s;
+	}
+
+	$res = soma(3,4,8,1,2);
+
+	func_get_args() -> Pega todos os argumentos e cria um vetor com eles
+		$p = ($p[0],$p[1],$p[2],$p[3],$p[4]);
+	func_num_args(); -> Retorna o números de argumentos passados
+
+Passagem por VALOR
+
+Pocedimento
+
+	Visulag
+
+		Procedimento Soma (x: Inteiro)
+			var S: Inteiro
+			x <- x + 2
+			Escreva(x)
+		FimProcedimento
+
+		Para chamar o procedimento
+
+		a <- 3
+		Teste (a)
+		Escreva(a) vai sair um 3
+
+	PHP
+
+		function soma ($x) {
+			$x += 2;
+			echo $x;
+		}
+
+		Para chamar o procedimento
+
+		$a = 3;
+		teste($a);
+		echo($a); vai sair um 3
+
+Passagem por ReferÊncia
+
+Pocedimento
+
+	Visulag
+
+		Procedimento Soma (var x: Inteiro)
+			var S: Inteiro
+			x <- x + 2
+			Escreva(x)
+		FimProcedimento
+
+		Para chamar o procedimento
+
+		a <- 3
+		Escreva(a) vai sair um 3
+		Teste (a)
+		Escreva(a) vai sair um 5
+
+	PHP
+
+		function soma (&$x) {
+			$x += 2;
+			echo $x;
+		}
+
+		Para chamar o procedimento
+
+		$a = 3;
+		echo($a); vai sair um 3
+		teste($a);
+		echo($a); vai sair um 5
+
+Como utilizar rotinas externas
+
+quando se tem mais de um script PHP que utilizem a mesma function, o ideal é fazer um terceiro script só com as funções e dentro dos script chamar esse arquivo com o comando include
+
+include
+require
+
+Com include, caso o arquivo de função esteja indisponivel, ele vai tenta executar o resto do script principal, já com require ele para a execução do script principal por falta do arquivo requerido.
+
+Carrega apenas uma vez o arquivo de funções, quando os de cima, carrega cada vez que os comandos foram chamados.
+include_once
+require_once
+
+Função String
+
+1) printf - saída de dado já formatado.
+
+Exemplo de sintax
+	$prod = "leite";
+	$preco = "4.5";
+	printf = ("O %s está custando R$ %.2f", $prod, $preco);
+
+	- paramêtros para o printf (mais comuns):
+		%d - valor decimal (positivo ou negativo),
+		%u - valor decimal sem sinal (apenas positivo),
+		%f - valor real,
+		%s - string
+
+2) print_r - mostra detalhes de variavel, principalmente vetores (útil para teste), pode ser substituida pelas funções var_dumps($x) ou var_export($x).
+	criar vetor (ver aula de vetor):
+		$x[0] = 4;
+		$x[1] = 3;
+		$x[2] = 8;
+		print_r($x);
+
+3) wordwrap - força um quebra de linha quando há um texto muito grande.
+	$txt = "Este é um exemplo de string gigante que...";
+	$res = wordwrap($txt,tamanho,"<br>\n"false); //false não quebra a palavra ao meio, true sim.
+
+4) strlen - calcula o tamanho da string.
+	$txt = "Curso em Vídeo";
+	$tamanho = strlen($txt);
+	$echo($tamanho);
+
+	Saída = 11
+ 
+ 5) trim - retira espaço em branco antes e depois de uma string (no exemplo são os 'x')
+	$nome = "xxxJoséxdaxSilvaxxx";
+	$echo(strlen($nome));
+	Saída = 19
+	$novo = trim($nome);
+	echo($novo);
+	Saída = JoséxdaxSilva
+	$echo(strlen($novo));
+	Saída = 13
+
+6) ltrim - só elimina os espaços no inicio da string, a esquerda,
+	$nome = "xxxJoséxdaxSilvaxxx";
+	$novo = ltrim($nome);
+	echo($novo);
+	Saída = JoséxdaxSilvaxxx
+	$echo(strlen($novo));
+	Saída = 16
+
+7) rtrim - só elimina os espaços no final da string, a direita,
+	$nome = "xxxJoséxdaxSilvaxxx";
+	$novo = rtrim($nome);
+	echo($novo);
+	Saída = xxxJoséxdaxSilva
+	$echo(strlen($novo));
+	Saída = 16
+
+8) str_word_count - contador de palavras dentro de uma string.
+	$frase = "Eu vou estudar PHP";
+	$cont = str_word_cont($frase,0);
+	print($cont);
+	saída = 4
+
+9) explode - gera um vetor a partir de cada palavra de uma frase
+	$site = "Curso em Vídeo";
+	$vetor = explode(" ",$site);
+	print_r($vetor);
+	Saída = Array([0]=>Curso [1]=>em [2]=>Vídeo)
+
+10) str_split - gera um vetor a partir de cada letra de uma palavra
+	$nome = "Maria";
+	$vetor = str_split($nome);
+	print_r($vetor);
+
+	saída = Array([0]=>M [1]=>a [2]=>r [3]=>i [4]=>a)
+
+11) implode - pega os elementos de um vetor e concatena em uma unica string
+	$vetor[0] = "Curso";
+	$vetor[1] = "em";
+	$vetor[2] = "Vídeo";
+	$texto = implode("#",$vetor); // pode usar a funçao join()
+	print($texto);
+	Saída = Curso#em#Vídeo
+
+12) chr - mostra a letra que está no código de entrada.
+	$letra = chr(67);
+
+13) ord
+	$letra = "C"
+	$cod = ord($letra);
+	echo "O código da letra $letra é $cod."
+	Saída = O código da letra C é 67.
