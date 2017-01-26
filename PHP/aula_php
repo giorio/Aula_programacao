@@ -367,7 +367,7 @@ Pocedimento
 
 Passagem por ReferÊncia
 
-Pocedimento
+Procedimento
 
 	Visulag
 
@@ -413,95 +413,175 @@ require_once
 
 Função String
 
-1) printf - saída de dado já formatado.
+	1) printf - saída de dado já formatado.
 
-Exemplo de sintax
-	$prod = "leite";
-	$preco = "4.5";
-	printf = ("O %s está custando R$ %.2f", $prod, $preco);
+		Exemplo de sintax
+		$prod = "leite";
+		$preco = "4.5";
+		printf = ("O %s está custando R$ %.2f", $prod, $preco);
 
-	- paramêtros para o printf (mais comuns):
-		%d - valor decimal (positivo ou negativo),
-		%u - valor decimal sem sinal (apenas positivo),
-		%f - valor real,
-		%s - string
+		- paramêtros para o printf (mais comuns):
+			%d - valor decimal (positivo ou negativo),
+			%u - valor decimal sem sinal (apenas positivo),
+			%f - valor real,
+			%s - string
 
-2) print_r - mostra detalhes de variavel, principalmente vetores (útil para teste), pode ser substituida pelas funções var_dumps($x) ou var_export($x).
-	criar vetor (ver aula de vetor):
-		$x[0] = 4;
-		$x[1] = 3;
-		$x[2] = 8;
-		print_r($x);
+	2) print_r - mostra detalhes de variavel, principalmente vetores (útil para teste), pode ser substituida pelas funções var_dumps($x) ou var_export($x).
+		criar vetor (ver aula de vetor):
+			$x[0] = 4;
+			$x[1] = 3;
+			$x[2] = 8;
+			print_r($x);
 
-3) wordwrap - força um quebra de linha quando há um texto muito grande.
-	$txt = "Este é um exemplo de string gigante que...";
-	$res = wordwrap($txt,tamanho,"<br>\n"false); //false não quebra a palavra ao meio, true sim.
+	3) wordwrap - força um quebra de linha quando há um texto muito grande.
+		$txt = "Este é um exemplo de string gigante que...";
+		$res = wordwrap($txt,tamanho,"<br>\n"false); //false não quebra a palavra ao meio, true sim.
 
-4) strlen - calcula o tamanho da string.
-	$txt = "Curso em Vídeo";
-	$tamanho = strlen($txt);
-	$echo($tamanho);
+	4) strlen - calcula o tamanho da string.
+		$txt = "Curso em Vídeo";
+		$tamanho = strlen($txt);
+		$echo($tamanho);
 
-	Saída = 11
- 
- 5) trim - retira espaço em branco antes e depois de uma string (no exemplo são os 'x')
-	$nome = "xxxJoséxdaxSilvaxxx";
-	$echo(strlen($nome));
-	Saída = 19
-	$novo = trim($nome);
-	echo($novo);
-	Saída = JoséxdaxSilva
-	$echo(strlen($novo));
-	Saída = 13
+		Saída = 11
+	 
+	 5) trim - retira espaço em branco antes e depois de uma string (no exemplo são os 'x')
+		$nome = "xxxJoséxdaxSilvaxxx";
+		$echo(strlen($nome));
+		Saída = 19
+		$novo = trim($nome);
+		echo($novo);
+		Saída = JoséxdaxSilva
+		$echo(strlen($novo));
+		Saída = 13
 
-6) ltrim - só elimina os espaços no inicio da string, a esquerda,
-	$nome = "xxxJoséxdaxSilvaxxx";
-	$novo = ltrim($nome);
-	echo($novo);
-	Saída = JoséxdaxSilvaxxx
-	$echo(strlen($novo));
-	Saída = 16
+	6) ltrim - só elimina os espaços no inicio da string, a esquerda,
+		$nome = "xxxJoséxdaxSilvaxxx";
+		$novo = ltrim($nome);
+		echo($novo);
+		Saída = JoséxdaxSilvaxxx
+		$echo(strlen($novo));
+		Saída = 16
 
-7) rtrim - só elimina os espaços no final da string, a direita,
-	$nome = "xxxJoséxdaxSilvaxxx";
-	$novo = rtrim($nome);
-	echo($novo);
-	Saída = xxxJoséxdaxSilva
-	$echo(strlen($novo));
-	Saída = 16
+	7) rtrim - só elimina os espaços no final da string, a direita,
+		$nome = "xxxJoséxdaxSilvaxxx";
+		$novo = rtrim($nome);
+		echo($novo);
+		Saída = xxxJoséxdaxSilva
+		$echo(strlen($novo));
+		Saída = 16
 
-8) str_word_count - contador de palavras dentro de uma string.
-	$frase = "Eu vou estudar PHP";
-	$cont = str_word_cont($frase,0);
-	print($cont);
-	saída = 4
+	8) str_word_count - contador de palavras dentro de uma string.
+		$frase = "Eu vou estudar PHP";
+		$cont = str_word_cont($frase,0);
+		print($cont);
+		saída = 4
 
-9) explode - gera um vetor a partir de cada palavra de uma frase
-	$site = "Curso em Vídeo";
-	$vetor = explode(" ",$site);
-	print_r($vetor);
-	Saída = Array([0]=>Curso [1]=>em [2]=>Vídeo)
+	9) explode - gera um vetor a partir de cada palavra de uma frase
+		$site = "Curso em Vídeo";
+		$vetor = explode(" ",$site);
+		print_r($vetor);
+		Saída = Array([0]=>Curso [1]=>em [2]=>Vídeo)
 
-10) str_split - gera um vetor a partir de cada letra de uma palavra
-	$nome = "Maria";
-	$vetor = str_split($nome);
-	print_r($vetor);
+	10) str_split - gera um vetor a partir de cada letra de uma palavra
+		$nome = "Maria";
+		$vetor = str_split($nome);
+		print_r($vetor);
 
-	saída = Array([0]=>M [1]=>a [2]=>r [3]=>i [4]=>a)
+		saída = Array([0]=>M [1]=>a [2]=>r [3]=>i [4]=>a)
 
-11) implode - pega os elementos de um vetor e concatena em uma unica string
-	$vetor[0] = "Curso";
-	$vetor[1] = "em";
-	$vetor[2] = "Vídeo";
-	$texto = implode("#",$vetor); // pode usar a funçao join()
-	print($texto);
-	Saída = Curso#em#Vídeo
+	11) implode - pega os elementos de um vetor e concatena em uma unica string
+		$vetor[0] = "Curso";
+		$vetor[1] = "em";
+		$vetor[2] = "Vídeo";
+		$texto = implode("#",$vetor); // pode usar a funçao join()
+		print($texto);
+		Saída = Curso#em#Vídeo
 
-12) chr - mostra a letra que está no código de entrada.
-	$letra = chr(67);
+	12) chr - mostra o caractere que está no código de entrada.
+		$letra = chr(67);
+		Saída =  C
 
-13) ord
-	$letra = "C"
-	$cod = ord($letra);
-	echo "O código da letra $letra é $cod."
-	Saída = O código da letra C é 67.
+	13) ord - mostra o código de caractere
+		$letra = "C"
+		$cod = ord($letra);
+		echo "O código da letra $letra é $cod."
+		Saída = O código da letra C é 67.
+
+	14) strtolower - coloca todas as letras da string em minuscula.
+		$nome = "Gustavo Di Iório";
+		print("Seu nome é ".strtolower($nome));
+		Saída = Seu nome é gustavo di iório
+
+	15) strtoupper - coloca todas as letras da string em maiscula.
+
+		$nome = "Gustavo Di Iório";
+		print("Seu nome é ".strtoupper($nome));
+		Saída = Seu nome é GUSTAVO DI IÓRIO
+
+	16) ucfirst - coloca a primeira em maiscula, mas não troca as demais.
+		$nome = "gustavo di iório";
+		print "Seu nome é ".ucfirst($nome);
+		Saída = Seu nome é Gustavo di iório
+
+	17) ucwords - coloca a primeira letra de cada palavra em maiscula, mas não altera as demais
+		$nome = "gustavo di iório";
+		print "Seu nome é ".ucwords($nome);
+		Saída = Seu nome é Gustavo Di Iório
+
+	18) strrev - coloca a string ao contrario
+		$nome = "gustavo di iório";
+		print "Seu nome é ".strrev($nome);
+		Saída = Seu nome é oiroi id ovatsug
+
+	19) strpos - retorna a posição de uma string, a substring tem ser igual a variavel, case sensitive
+		$frase = "Estou aprendendo PHP";
+		$pos = strpos($frase, "PHP");
+		Saída = A string foi encontada na posição 17
+
+	20) stripos - retorna a posição de uma string, a substring tem ser igual a variavel, ignora o case sensitive
+		$frase = "Estou aprendendo PHP";
+		$pos = stripos($frase, "php");
+		Saída = A string foi encontada na posição 17.
+
+	21) substr_count - conta a quantidade de vez uma substring aparece dentro de uma string.
+		$frase = "Estou aprendendo PHP no Curso em Vídeo de PHP";
+		$cont = substr_count($frase,"PHP");
+		print("PHP foi encontrado $cont vezes");
+		Saída = PHP foi encontrado 2 vezes
+
+	22) substr - uma parte de uma string, os parametros são: (Variavel, posição inicial, quantidade de caractere)
+		$site = "Curso em Vídeo";
+		$sub = substr($site, 0, 5);
+		echo "$sub";
+		Saída = Curso
+
+		Considerações:
+		1 - se na posição colocar valor negativo ele vai pegar a últimas letras exemplo substr($site, -5, 2) = Vi; ele vai contar 5 espaço começando da última.
+		2 - se colocar apenas a posição inicial, a função irá retornar o valor da string començando daquela posição até o final, exemplo substr($site, 6) = em Vídeo
+
+	23) str_pad - faz uma string caber dentro de um tamanho, quando uma string é menor que o tamanho do campo, pode usar essa função aumentar o tamanho da string
+		$nome = "Guanabara";
+		$novo_right = str_pad($nome,30," ",STR_PAD_RIGHT);
+		$novo_center = str_pad($nome,30," ",STR_PAD_BOTH);
+		$novo_left = str_pad($nome,30," ",STR_PAD_LEFT);
+		STR_PAD_RIGHT - colocar a string do terceiro paramentro no final, a direita,
+		STR_PAD_BOTH - colocar a string do terceiro paramentro divido na direita e na esquerda,
+		STR_PAD_LEFT - colocar a string do terceiro paramentro no inicio, a esquerda.
+		print "Meu professor é o $novo_right, usando right";
+		print "Meu professor é o $novo_center, usando both";
+		print "Meu professor é o $novo_left, usando left";
+
+	24) str_repeat - repete um string pelo número de vez definido.
+		$txt = str_repeat("Php" 5);
+		echo "O texto gerado foi $txt";
+		Saída O texto gerado foi PhpPhpPhpPhpPhp
+
+	25) str_replace - ele troca um substring por outra, troca o parametro 1 pelo 2, case sensitive
+		$frase = "Gosto de estudar Matemática";
+		$novafrase = str_replace("Matemática", "PHP", $frase);
+		echo $novafrase;
+
+	26) str_ireplace - ele troca um substring por outra, troca o parametro 1 pelo 2,
+		$frase = "Gosto de estudar Matemática";
+		$novafrase = str_ireplace("Matemática", "PHP", $frase);
+		echo $novafrase;
