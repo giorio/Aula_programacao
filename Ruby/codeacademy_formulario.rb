@@ -14,4 +14,4 @@ print "De que estado você é?"
 state = gets.chomp
 state.upcase!
 
-puts "Seu nome é #{first_name} #{last_name} e voce é de #{ciGustavoty}, #{state}!"
+puts "Seu nome é #{first_name} #{last_name} e voce é de #{city}, #{state}!"
