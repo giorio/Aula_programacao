@@ -800,13 +800,3 @@ form f_set_alv_col
   endif.
 
 endform.                    "f_set_alv_col
-
- 
-Juliane Mendonça
-Gerência de Soluções SAP
-Axxiom Soluções Tecnológicas S.A.
-(31) 3280-4982
-www.axxiom.com.br
-
-
-
