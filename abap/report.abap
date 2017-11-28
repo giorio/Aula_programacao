@@ -7,8 +7,8 @@ REPORT ZR00001. "Isso é um comentário pós código
 Write 'esse comando escreve na tela, deverá usar aspas simples ("'")'.
 
 Write: / 'Esse é um outro jeito de entrar com o comando",     "a virgula indica que o comando continua em outra linha
-      / 'o comando "/" quebra a linha                         "sem a / não há quebra de linhas.
-      /20 'esse texto vai iniciar na coluna 20'.
+       / 'o comando "/" quebra a linha                         "sem a / não há quebra de linhas.
+       /20 'esse texto vai iniciar na coluna 20'.
       
 Write: / 'essa é 5ª linha'.
 skip 1.                                                       "Pula um número especifico de linhas
@@ -20,4 +20,4 @@ FORMAT COLOR 1.                                               "indica que deste 
 Write: / 'Todo esse texto'.
 Write: 'será impresso em'.
 write: 'azul'.
-Format                                                        "CTRL + espaço - > exibe um lista de opções
+Format reset.                                                       "CTRL + espaço - > exibe um lista de opções sub comandos.
